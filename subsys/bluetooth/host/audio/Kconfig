@@ -20,6 +20,13 @@ if BT_AUDIO
 config BT_ISO
 	bool
 
+config BT_CCID
+	bool # hidden
+	default n
+	help
+	  This hidden option is enabled when any of the content control
+	  features are enabled.
+
 if BT_CONN
 
 config BT_AUDIO_UNICAST
