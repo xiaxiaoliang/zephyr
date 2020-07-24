@@ -30,6 +30,10 @@ enum {
 	BT_UUID_TYPE_128,
 };
 
+#define BT_UUID16_SIZE                  2
+#define BT_UUID32_SIZE                  4
+#define BT_UUID128_SIZE                 16
+
 /** @brief This is a 'tentative' type and should be used as a pointer only */
 struct bt_uuid {
 	uint8_t type;
@@ -47,7 +51,7 @@ struct bt_uuid_32 {
 
 struct bt_uuid_128 {
 	struct bt_uuid uuid;
-	uint8_t val[16];
+	uint8_t val[BT_UUID128_SIZE];
 };
 
 #define BT_UUID_INIT_16(value)		\
