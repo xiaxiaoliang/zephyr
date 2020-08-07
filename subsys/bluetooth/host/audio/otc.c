@@ -862,9 +862,6 @@ static uint8_t read_obj_type_cb(struct bt_conn *conn, uint8_t err,
 {
 	struct bt_otc_internal_instance_t *inst =
 		lookup_inst_by_handle(params->single.handle);
-	struct net_buf_simple net_buf;
-
-	net_buf_simple_init_with_data(&net_buf, (void *)data, length);
 
 	BT_DBG("handle %d, length %u", params->single.handle, length);
 
@@ -875,13 +872,15 @@ static uint8_t read_obj_type_cb(struct bt_conn *conn, uint8_t err,
 
 	if (data) {
 		if (length == BT_UUID128_SIZE || length == BT_UUID16_SIZE) {
-			bt_uuid_create(
-				&inst->otc_inst->cur_object.type_uuid.uuid,
-				net_buf_simple_pull_mem(&net_buf, length),
-				length);
-			BT_HEXDUMP_DBG(
-				inst->otc_inst->cur_object.type_uuid.u128.val,
-				length, "UUID type read");
+			char uuid_str[BT_UUID_STR_LEN];
+			struct bt_uuid *uuid =
+				&inst->otc_inst->cur_object.type_uuid.uuid;
+
+			bt_uuid_create(uuid, data, length);
+
+			bt_uuid_to_str(uuid, uuid_str, sizeof(uuid_str));
+			BT_DBG("UUID type read: %s", log_strdup(uuid_str));
+
 			BT_OTC_SET_METADATA_REQ_TYPE(inst->metadata_read, true);
 		} else {
 			BT_WARN("Invalid length %u (expected max %lu)",
