@@ -705,8 +705,6 @@ static uint8_t read_object_size_cb(struct bt_conn *conn, uint8_t err,
 		return BT_GATT_ITER_STOP;
 	}
 
-	inst->busy = false;
-
 	if (err) {
 		BT_DBG("err: 0x%02X", err);
 	} else if (data) {
@@ -771,8 +769,6 @@ static uint8_t read_obj_id_cb(struct bt_conn *conn, uint8_t err,
 		BT_ERR("Instance not found");
 		return BT_GATT_ITER_STOP;
 	}
-
-	inst->busy = false;
 
 	if (err) {
 		BT_DBG("err: 0x%02X", err);
@@ -1022,8 +1018,6 @@ static uint8_t read_obj_properties_cb(struct bt_conn *conn, uint8_t err,
 		return BT_GATT_ITER_STOP;
 	}
 
-	inst->busy = false;
-
 	if (err) {
 		BT_WARN("err: 0x%02X", err);
 	} else if (data && length <= OTS_PROPERTIES_LEN) {
@@ -1233,6 +1227,7 @@ static void read_next_metadata(struct bt_conn *conn,
 				conn, inst->metadata_err, inst->otc_inst,
 				inst->metadata_read);
 		}
+		return;
 	}
 
 	if (err) {
@@ -1271,7 +1266,9 @@ int bt_otc_obj_metadata_read(struct bt_conn *conn,
 	inst->metadata_to_read = metadata & BT_OTC_METADATA_REQ_ALL;
 	inst->metadata_read_attempted = 0;
 
+	inst->busy = true;
 	read_next_metadata(conn, inst);
+
 	return 0;
 }
 
