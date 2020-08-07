@@ -168,15 +168,17 @@ static int read_attr(struct bt_conn *conn,
 static void print_oacp_response(enum bt_ots_oacp_proc_type req_opcode,
 				enum bt_ots_oacp_res_code result_code)
 {
-	BT_DBG("Request OP Code: %s", lit_request[req_opcode]);
-	BT_DBG("Result Code    : %s", lit_result[result_code]);
+	BT_DBG("Request OP Code: %s", log_strdup(lit_request[req_opcode]));
+	BT_DBG("Result Code    : %s", log_strdup(lit_result[result_code]));
 }
 
 static void print_olcp_response(enum bt_ots_olcp_proc_type req_opcode,
 				enum bt_ots_olcp_res_code result_code)
 {
-	BT_DBG("Request OP Code: %s", lit_olcp_request[req_opcode]);
-	BT_DBG("Result Code    : %s", lit_olcp_result[result_code]);
+	BT_DBG("Request OP Code: %s",
+	       log_strdup(lit_olcp_request[req_opcode]));
+	BT_DBG("Result Code    : %s",
+	       log_strdup(lit_olcp_result[result_code]));
 }
 
 static void date_time_decode(struct net_buf_simple *buf,
@@ -1488,7 +1490,7 @@ void bt_otc_metadata_display(struct bt_otc_obj_metadata *metadata,
 
 		u64_to_uint48array_str(metadata->id, t);
 		BT_INFO("Object ID: 0x%s", log_strdup(t));
-		BT_INFO("Object name: %s", metadata->name);
+		BT_INFO("Object name: %s", log_strdup(metadata->name));
 		BT_INFO("Object Current Size: %u", metadata->current_size);
 		BT_INFO("Object Allocate Size: %u", metadata->alloc_size);
 
