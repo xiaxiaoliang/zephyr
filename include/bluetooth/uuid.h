@@ -1213,6 +1213,69 @@ struct bt_uuid_128 {
  */
 #define BT_UUID_VOCS_DESCRIPTION \
 	BT_UUID_DECLARE_16(BT_UUID_VOCS_DESCRIPTION_VAL)
+/** @def BT_UUID_AICS_VAL
+ *  @brief Audio Input Control Service value
+ */
+#define BT_UUID_AICS_VAL 0x8fd3
+/** @def BT_UUID_AICS
+ *  @brief Audio Input Control Service
+ */
+#define BT_UUID_AICS \
+	BT_UUID_DECLARE_16(BT_UUID_AICS_VAL)
+/** @def BT_UUID_AICS_STATE_VAL
+ *  @brief Audio Input Control Service State value
+ */
+#define BT_UUID_AICS_STATE_VAL 0x8fe2
+/** @def BT_UUID_AICS_STATE
+ *  @brief Audio Input Control Service State
+ */
+#define BT_UUID_AICS_STATE \
+	BT_UUID_DECLARE_16(BT_UUID_AICS_STATE_VAL)
+/** @def BT_UUID_AICS_GAIN_SETTINGS_VAL
+ *  @brief Audio Input Control Service Gain Settings Properties value
+ */
+#define BT_UUID_AICS_GAIN_SETTINGS_VAL 0x8fe3
+/** @def BT_UUID_AICS_GAIN_SETTINGS
+ *  @brief Audio Input Control Service Gain Settings Properties
+ */
+#define BT_UUID_AICS_GAIN_SETTINGS \
+	BT_UUID_DECLARE_16(BT_UUID_AICS_GAIN_SETTINGS_VAL)
+/** @def BT_UUID_AICS_INPUT_TYPE_VAL
+ *  @brief Audio Input Control Service Input Type value
+ */
+#define BT_UUID_AICS_INPUT_TYPE_VAL 0x8fe5
+/** @def BT_UUID_AICS_INPUT_TYPE
+ *  @brief Audio Input Control Service Input Type
+ */
+#define BT_UUID_AICS_INPUT_TYPE \
+	BT_UUID_DECLARE_16(BT_UUID_AICS_INPUT_TYPE_VAL)
+/** @def BT_UUID_AICS_INPUT_STATUS_VAL
+ *  @brief Audio Input Control Service Input Status value
+ */
+#define BT_UUID_AICS_INPUT_STATUS_VAL 0x8fe6
+/** @def BT_UUID_AICS_INPUT_STATUS
+ *  @brief Audio Input Control Service Input Status
+ */
+#define BT_UUID_AICS_INPUT_STATUS \
+	BT_UUID_DECLARE_16(BT_UUID_AICS_INPUT_STATUS_VAL)
+/** @def BT_UUID_AICS_CONTROL_VAL
+ *  @brief Audio Input Control Service Control Point value
+ */
+#define BT_UUID_AICS_CONTROL_VAL 0x8fe7
+/** @def BT_UUID_AICS_CONTROL
+ *  @brief Audio Input Control Service Control Point
+ */
+#define BT_UUID_AICS_CONTROL \
+	BT_UUID_DECLARE_16(BT_UUID_AICS_CONTROL_VAL)
+/** @def BT_UUID_AICS_DESCRIPTION_VAL
+ *  @brief Audio Input Control Service Input Description value
+ */
+#define BT_UUID_AICS_DESCRIPTION_VAL 0x8fe8
+/** @def BT_UUID_AICS_DESCRIPTION
+ *  @brief Audio Input Control Service Input Description
+ */
+#define BT_UUID_AICS_DESCRIPTION \
+	BT_UUID_DECLARE_16(BT_UUID_AICS_DESCRIPTION_VAL)
 
 /*
  * Protocol UUIDs
