@@ -1168,6 +1168,51 @@ struct bt_uuid_128 {
  */
 #define BT_UUID_CSIS_SET_LOCK \
 	BT_UUID_DECLARE_16(BT_UUID_CSIS_SET_LOCK_VAL)
+/** @def BT_UUID_VOCS_VAL
+ *  @brief Volume Offset Control Service value
+ */
+#define BT_UUID_VOCS_VAL 0x8fd2
+/** @def BT_UUID_VOCS
+ *  @brief Volume Offset Control Service
+ */
+#define BT_UUID_VOCS \
+	BT_UUID_DECLARE_16(BT_UUID_VOCS_VAL)
+/** @def BT_UUID_VOCS_STATE_VAL
+ *  @brief Volume Offset State value
+ */
+#define BT_UUID_VOCS_STATE_VAL 0x8fbc
+/** @def BT_UUID_VOCS_STATE
+ *  @brief Volume Offset State
+ */
+#define BT_UUID_VOCS_STATE \
+	BT_UUID_DECLARE_16(BT_UUID_VOCS_STATE_VAL)
+/** @def BT_UUID_VOCS_LOCATION_VAL
+ *  @brief Audio Location value
+ */
+#define BT_UUID_VOCS_LOCATION_VAL 0x8fbd
+/** @def BT_UUID_VOCS_LOCATION
+ *  @brief Audio Location
+ */
+#define BT_UUID_VOCS_LOCATION \
+	BT_UUID_DECLARE_16(BT_UUID_VOCS_LOCATION_VAL)
+/** @def BT_UUID_VOCS_CONTROL_VAL
+ *  @brief Volume Offset Control Point value
+ */
+#define BT_UUID_VOCS_CONTROL_VAL 0x8fbe
+/** @def BT_UUID_VOCS_CONTROL
+ *  @brief Volume Offset Control Point
+ */
+#define BT_UUID_VOCS_CONTROL \
+	BT_UUID_DECLARE_16(BT_UUID_VOCS_CONTROL_VAL)
+/** @def BT_UUID_VOCS_DESCRIPTION_VAL
+ *  @brief Volume Offset Audio Output Description value
+ */
+#define BT_UUID_VOCS_DESCRIPTION_VAL 0x8fbf
+/** @def BT_UUID_VOCS_DESCRIPTION
+ *  @brief Volume Offset Audio Output Description
+ */
+#define BT_UUID_VOCS_DESCRIPTION \
+	BT_UUID_DECLARE_16(BT_UUID_VOCS_DESCRIPTION_VAL)
 
 /*
  * Protocol UUIDs
