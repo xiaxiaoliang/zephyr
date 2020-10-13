@@ -26,6 +26,7 @@ zephyr_library_sources_ifdef(
   iso.c
   )
 zephyr_library_sources_ifdef(
+<<<<<<< HEAD
   CONFIG_BT_CSIS
   csis.c
   )
@@ -48,6 +49,10 @@ zephyr_library_sources_ifdef(
 zephyr_library_sources_ifdef(
   CONFIG_BT_CCP
   ccp.c
+  )
+zephyr_library_sources_ifdef(
+  CONFIG_BT_BAP
+  bap.c
   )
 
 if(CONFIG_BT_CTLR AND CONFIG_BT_LL_SW_SPLIT)
