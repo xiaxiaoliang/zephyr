@@ -24,6 +24,28 @@
 #define AICS_STATUS_INACTIVE                    0x00
 #define AICS_STATUS_ACTIVE                      0x01
 
+/* AICS macros */
+#if CONFIG_BT_VCS
+#define VCS_COUNT CONFIG_BT_VCS_AICS_INSTANCE_COUNT
+#else
+#define VCS_COUNT 0
+#endif
+
+#define AICS_VCS_INDEX(i)                       (i)
+
+#define AICS_INST_COUNT VCS_COUNT
+
+/* AICS client macros */
+#if CONFIG_BT_VCS_CLIENT
+#define VCS_CLIENT_COUNT CONFIG_BT_VCS_CLIENT_MAX_AICS_INST
+#else
+#define VCS_CLIENT_COUNT 0
+#endif
+
+#define AICS_CLI_VCS_CLIENT_INDEX(i)                   (i)
+
+#define AICS_CLIENT_INST_COUNT VCS_CLIENT_COUNT
+
 #define AICS_INPUT_MODE_IMMUTABLE(mode) \
 	((mode) == AICS_MODE_MANUAL_ONLY || (mode) == AICS_MODE_AUTO_ONLY)
 
